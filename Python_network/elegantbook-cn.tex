@@ -1,0 +1,218 @@
+\documentclass[cn,chinese,color=cyan]{elegantbook}
+%\definecolor{second}{RGB}{244, 105, 102}
+\title{Python全栈开发(中级)}
+\subtitle{课程学习记录}
+
+\author{雨霓同学}
+\institute{鸢}
+\date{2020年6月19日}
+\version{910014191@qq.com}
+\bioinfo{版本}{V1.0}
+
+
+\extrainfo{没有合格的黑夜，也就无所谓真正的黎明}
+\setcounter{tocdepth}{3}
+
+\newcommand{\dollar}{\mbox{\textdollar}}
+\lstset{
+	mathescape = false}
+\logo{logo1.png}
+\cover{(2).jpg}
+
+% 本文档命令
+\usepackage{mathtools}
+\usepackage{background}
+\usepackage{varwidth}
+\usepackage{tikz} 
+\SetBgContents{}
+\usepackage{array}
+\usepackage{halloweenmath}
+\usepackage{float}
+\usepackage{algorithm}  
+\usepackage{algpseudocode}  
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{varwidth}
+\usepackage{natbib}
+\usepackage{multirow}
+\usepackage{booktabs}
+\input{set.tex}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+% 修改目录深度
+\setcounter{tocdepth}{2}
+
+\begin{document}
+\definecolor{mycolor}{RGB}{245, 255, 250}%用于设置封面长条颜色
+\maketitle
+
+
+
+\frontmatter
+
+
+
+%但是，我想声明的是：
+
+%\begin{center}
+%  由于某些原因，Elegant\LaTeX{} 项目 \underline{不再接受}\textbf{任何}非我本人预约的提交。
+%\end{center}
+
+%我是一个理想主义者，关于这个模板，我有自己的想法。我所关心的是，我周围的人能方便使用 \LaTeX{} 以及此模板，我自己会为自己的东西感到开心。如果维护模板让我不开心，那我就不会再维护了。诚然这个模板并不是完美的，但是相比 2.x 好很多了，这些改进离不开大家的反馈、China\TeX{} 和逐鹿人的鼓励以及支援人员的帮助！
+
+%\vskip 1.5cm
+
+%\begin{flushright}
+%Ethan Deng\\
+%February 10, 2020
+%\end{flushright}
+\newpage 
+\tableofcontents
+%\listofchanges
+
+\mainmatter
+\chapter{网络编程——SOCKET开发}
+\section{计算机基础}
+\subsection{什么是C/S架构}
+C指的是client（客户端软件），S指的是Server（服务端软件），本章的重点就是教大家写一个C/S架构的软件，实现服务端软件与客户端软件基于网络通信。
+
+
+作为应用开发程序员，我们开发的软件都是应用软件，而应用软件必须运行于操作系统之上，操作系统则运行于硬件之上，应用软件是无法直接操作硬件的，应用软件对硬件的操作必须调用操作系统的接口，由操作系统操控硬件。
+
+比如客户端软件想要基于网络发送一条消息给服务端软件，流程是：
+
+\begin{dinglist}{118}
+	\item 客户端软件产生数据，存放于客户端软件的内存中，然后调用接口将自己内存中的数据发送／拷贝给操作系统内存
+	
+	\item 客户端操作系统收到数据后，按照客户端软件指定的规则（即协议）、调用网卡发送数据
+	
+	\item 网络传输数据
+	
+	\item 服务端软件调用系统接口，想要将数据从操作系统内存拷贝到自己的内存中
+	
+	\item 服务端操作系统收到4的指令后，使用与客户端相同的规则（即协议）从网卡接收到数据，然后拷贝给服务端软件
+\end{dinglist}
+
+\subsection{什么是网络}
+
+硬件之上安装好操作系统，然后装上软件你就可以正常使用了，但此时你也只能自己使用，像下图这样，每个人都拥有一台自己的机器，然而彼此孤立
+
+
+
+如何能大家一起玩耍，那就是联网了，即internet
+
+
+
+然而internet为何物？举一个简单的例子： 如果把一个人与这个人的有线电话比喻为一台计算机，那么其实两台计算机之间通信与两个人打电话之间通信的原理是一样的。 两个人之间想要打电话首先一点必须是接电话线，这就好比是计算机之间的通信首先要有物理链接介质，比如网线，交换机，路由器等网络设备。 通信的线路建好之后，只是物理层面有了可以承载数据的介质，要想通信，还需要我们按照某种规则组织我们的数据，这样对方在接收到数据后就可以按照相同的规则去解析出数据，这里说的规则指的就是：中国有很多地区，不同的地区有不同的方言，为了全中国人都可以听懂，大家统一讲普通话
+
+
+
+普通话属于中国国内人与人之间通信的标准，那如果是两个国家的人交流呢？
+
+
+
+问题是，你不可能要求一个人／计算机掌握全世界的语言／标准，于是有了世界统一的通信标准：英语
+
+
+
+英语成为世界上所有人通信的统一标准，计算机之间的通信也应该有一个像英语一样的通信标准，这个标准称之为互联网协议， 可以很明确地说：互联网协议就是计算机界的英语，网络就是物理链接介质+互联网协议。 我们需要做的是，让全世界的计算机都学会互联网协议，这样任意一台计算机在发消息时都严格按照协议规定的格式去组织数据，接收方就可以按照相同的协议解析出结果了，这就实现了全世界的计算机都能无障碍通信。
+
+ 按照功能不同，人们将互联网协议分为osi七层或tcp/ip五层或tcp/ip四层（我们只需要掌握tcp/ip五层协议即可），这种分层就好比是学习英语的几个阶段，每个阶段应该掌握专门的技能或者说完成特定的任务，比如：1、学音标 2、学单词 3、学语法 4、写作文。。。
+
+
+
+每层运行常见物理设备（了解）
+
+\subsection{什么是TCP/IP?}
+Transmission Control Protocol/Internet Protocol的简写，中译名为传输控制协议/因特网互联协议，又名网络通讯协议，是Internet最基本的协议、Internet国际互联网络的基础
+
+\subsection{TCP/IP的起源}
+20世纪50年代末，正处于冷战时期。当时美国军方为了自己的计算机网络在受到袭击时，即使部分网络被摧毁，其余部分仍能保持通信联系，便由美国国防部的高级研究计划局（ARPA）建设了一个军用网，叫做“阿帕网”（ARPAnet）。阿帕网于1969年正式启用，当时仅连接了4台计算机，供科学家们进行计算机联网实验用，这就是因特网的前身。
+
+到70年代，ARPAnet已经有了好几十个计算机网络，但是每个网络只能在网络内部的计算机之间互联通信，不同计算机网络之间仍然不能互通。为此， ARPA又设立了新的研究项目，支持学术界和工业界进行有关的研究，研究的主要内容就是想用一种新的方法将不同的计算机局域网互联，形成“互联网”。研究人员称之为“internetwork”，简称“Internet”，这个名词就一直沿用到现在。
+
+终于到1974年，TCP/IP诞生啦，TCP/IP有一个非常重要的特点，就是开放性，即TCP/IP的规范和Internet的技术都是公开的。目的就是使任何厂家生产的计算机都能相互通信，使Internet成为一个开放的系统，这正是后来Internet得到飞速发展的重要原因。
+
+\subsection{OSI七层模型}
+
+美国国防部在开发tcp/ip的同时，还有一些其它大厂商也开发出了自己的网络体系，实际上世界上第一个网络体系结构由IBM公司提出（也是74年，比TCP/IP略早，SNA），以后其他公司也相继提出自己的网络体系结构如：Digital公司的DNA，美国国防部的TCP/IP等，多种网络体系结构并存，其结果是若采用IBM的结构，只能选用IBM的产品，只能与同种结构的网络互联。
+
+这就像中国人说中文，美国人说英语，日本人说日本话一样，同一国家的人沟通没问题，但不同国家之间的人没法通信。为了解决网络通信中这样不互通的问题，国际标准化组织ISO于1977年成立了一个委员会，在现有网络的基础上，提出了不基于具体机型、操作系统或公司的网络体系结构，称为开放系统互联模型。
+
+\textbf{9}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{warning}[title={{\color{green} \faEnvira} 完成一个用户输入注册：\ }]
+1. 用于输入自己的用户名
+
+2. 用户输入合法性检测
+
+3. 写入数据库(写入文件)
+\end{warning}
+实现方法如下:
+\begin{code}
+	\vspace{-10pt}
+	\begin{lstlisting}[style=Python2]
+import json
+
+def interactive():
+	name = input('>>').strip()
+	pwd = input('>>').strip()
+	return {
+		'name': name,
+		'pwd': pwd
+		}
+
+def check(user_info):
+	is_valid = True
+	if len(user_info['name']) == 0:
+		print('用户名为空')
+		is_valid = False
+	if len(user_info['pwd']) < 6:
+		print('密码不能小于6位')
+		is_valid = False
+	return {
+		'is_valid': is_valid,
+		'user_info': user_info
+		}
+
+def register(check_info):
+	if check_info['is_valid']:
+		with open('db.json', 'w', encoding='utf-8') as f:
+			json.dump(check_info['user_info'], f)
+
+def main():
+	user_info = interactive()
+	check_info = check(user_info)
+	register(check_info)
+
+if __name__ == '__main__':
+	main()
+	\end{lstlisting}
+	\vspace{-10pt}
+\end{code}
+
+\textbf{现在需要在上述过程中，添加邮箱验证功能}
+
+
+
+
+
+
+\end{document}

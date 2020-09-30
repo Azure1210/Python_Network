@@ -1,0 +1,7 @@
+\contentsline {chapter}{\numberline {1}网络编程——SOCKET开发}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}计算机基础}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}什么是C/S架构}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}什么是网络}{1}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}什么是TCP/IP?}{2}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}TCP/IP的起源}{2}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.5}OSI七层模型}{2}{subsection.1.1.5}%

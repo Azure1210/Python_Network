@@ -1,0 +1,112 @@
+\usepackage[many]{tcolorbox}
+\tcbuselibrary{skins, breakable, theorems}
+\tcbuselibrary{listings}
+\tcbuselibrary{breakable}
+\tcbset{boxrule=0pt,sharp corners}
+\tcbset{listing options=Python}
+
+\lstdefinestyle{Python2}{
+	language =   Python, % 语言选Python
+	frame=none,
+	mathescape,
+	emphstyle={\color{frenchplum}},
+	numbers=none,
+	stepnumber=2,
+	numbersep=3em,
+	numberstyle=\tiny,
+	keywordstyle    =   \color{blue},
+	keywordstyle    =   [2] \color{teal},
+	stringstyle     =   \color{magenta},
+	commentstyle    =   \color{red}\ttfamily,
+	breaklines      =   true,   % 自动换行，
+	columns         =   fixed,  %字间距就不固定很丑，必须加
+	basewidth       =   .5em,
+	keywordstyle=\color{red},
+	commentstyle=\color{gray},
+	backgroundcolor=\color[RGB]{252, 252, 252},
+	tabsize=4,
+	showspaces=false,
+	showstringspaces=false,
+	columns=fixed,
+	morekeywords={maketitle,pip,matplotlib,pandas,numpy},
+}
+
+\newtcolorbox{notes}[1][]{%
+	enhanced jigsaw,
+	borderline west={1.5pt}{0pt}{mblue},
+	sharp corners,
+	boxrule=0pt,
+	fonttitle={\small\bfseries},
+	coltitle={black},
+	title={{\color{mblue} \faInfoCircle} Note:\ },
+	colbacktitle=mlblue,
+	colback=bg,
+	left=2mm,
+	right=2mm,
+	#1}
+\newtcolorbox{code}[1][]{%
+	enhanced jigsaw,
+	breakable,
+	borderline west={1.5pt}{0pt}{mblue},
+	sharp corners,
+	boxrule=0pt,
+	fonttitle={\small\bfseries},
+	coltitle={black},
+	title={{\color{mblue} \faCode} \quad Python Code:\ },
+	colbacktitle=mlblue,
+	colback=bg,
+	left=2mm,
+	right=2mm,
+	#1}
+\newtcolorbox{warning}[1][]{%
+	enhanced jigsaw,
+	breakable,
+	borderline west={1.5pt}{0pt}{mred},
+	sharp corners,
+	boxrule=0pt,
+	fonttitle={\small\bfseries},
+	coltitle={black},
+	title={{\color{mred} \faExclamationTriangle} Warning:\ },
+	colbacktitle=mlred,
+	colback=bg,
+	left=2mm,
+	right=2mm,
+	#1}
+
+\usepackage{varwidth}
+ 
+\newlist{tabitemize}{itemize}{1}
+\setlist[tabitemize]{label=\ding{118},nosep,after=\strut}
+
+
+
+
+
+
+
+
+
+
+
+
+\numberwithin{equation}{section}
+\usepackage{cases,empheq}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\definecolor{bg}{rgb}{0.99,0.99,0.99}
+\definecolor{mlblue}{RGB}{236,243,255}
+\definecolor{mblue}{RGB}{0,123,255}
+\definecolor{mlred}{RGB}{253,243,242}
+\definecolor{mred}{RGB}{220,53,69}
+\usepackage{newtxtext}
+\usepackage[UTF8,scheme=plain]{ctex}
+\usepackage{fontawesome}
+\usepackage{newtxtext}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{darkblue}{cmyk}{1,0,0,0}%纯蓝
+\renewcommand{\headrule}{\color{darkblue}\leavevmode\xleaders\hbox{${\sim}{\cdot}$}\hfill\null}
+
+\pagestyle{fancy}
