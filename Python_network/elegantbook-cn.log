@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.4.27)  1 OCT 2020 00:02
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.4.27)  4 OCT 2020 21:56
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1701,41 +1701,6 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 
 
 ]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.0pt on input line 161.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 9.0pt on input line 161.
-
-
-LaTeX Font Warning: Font shape `TU/FontAwesome(0)/b/n' undefined
-(Font)              using `TU/FontAwesome(0)/m/n' instead on input line 161.
-
-(d:/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
-
-Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: Could not resolve font "FangSong/B" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: Could not resolve font "FangSong/I" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
-(fontspec)             with options [Script={CJK}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-
 
 Package fontspec Info: Could not resolve font "KaiTi/BI" (it probably doesn't
 (fontspec)             exist).
@@ -1762,27 +1727,103 @@ Package fontspec Info: Font family 'KaiTi(0)' created for font 'KaiTi' with
 
 (d:/texlive/2020/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
 [2]
+第\nobreakspace {}二\nobreakspace {}章 2.
 (d:/texlive/2020/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
-[3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 218.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 218.
+File: ./figure/001.png Graphic file (type bmp)
+<./figure/001.png>
+
+[3
+
+]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 9.0pt on input line 173.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 9.0pt on input line 173.
+
+
+LaTeX Font Warning: Font shape `TU/FontAwesome(0)/b/n' undefined
+(Font)              using `TU/FontAwesome(0)/m/n' instead on input line 173.
+
+(d:/texlive/2020/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[4]
+File: ./figure/002.png Graphic file (type bmp)
+<./figure/002.png>
+File: ./figure/003.png Graphic file (type bmp)
+<./figure/003.png>
+File: ./figure/004.png Graphic file (type bmp)
+<./figure/004.png>
+File: ./figure/005.png Graphic file (type bmp)
+<./figure/005.png>
+
+(d:/texlive/2020/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[5]
+(d:/texlive/2020/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[6]
+File: ./figure/006.png Graphic file (type bmp)
+<./figure/006.png>
+ (d:/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+
+Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "FangSong/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "FangSong/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
+(fontspec)             with options [Script={CJK}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+
+(d:/texlive/2020/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[7]
+(d:/texlive/2020/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[8]
+File: ./figure/008.png Graphic file (type bmp)
+<./figure/008.png>
+File: ./figure/0081.png Graphic file (type bmp)
+<./figure/0081.png>
+
+(d:/texlive/2020/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[9]
+Missing character: There is no ・ in font SimSun/OT:script=hani;language=dflt;!
+File: ./figure/0091.png Graphic file (type bmp)
+<./figure/0091.png>
+
+(d:/texlive/2020/texmf-dist/tex/generic/pgfornament/vectorian/vectorian88.pgf)
+[10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 378.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 378.
  (./elegantbook-cn.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 218.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 218.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 378.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 378.
 Package rerunfilecheck Info: File `elegantbook-cn.out' has not changed.
-(rerunfilecheck)             Checksum: 944C37E60ED4D1F17178E5E38776725A;985.
+(rerunfilecheck)             Checksum: 6DA82F3E3711DB3D57E9B6908530B201;2399.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 41456 strings out of 479417
- 844506 string characters out of 5888071
- 1557926 words of memory out of 5000000
- 58111 multiletter control sequences out of 15000+600000
+ 41660 strings out of 479417
+ 853364 string characters out of 5888071
+ 1553639 words of memory out of 5000000
+ 58292 multiletter control sequences out of 15000+600000
  561968 words of font info for 81 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 76i,15n,126p,874b,1675s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 76i,16n,126p,874b,1675s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on elegantbook-cn.pdf (5 pages).
+Output written on elegantbook-cn.pdf (12 pages).
